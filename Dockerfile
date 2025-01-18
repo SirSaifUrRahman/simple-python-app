@@ -1,8 +1,6 @@
-FROM python:3.7
-
-RUN apt-get update -y 
-COPY ./ /app
+FROM python:3.9-slim
 WORKDIR /app
-RUN pip install flask
-ENTRYPOINT [ "python" ]
-CMD [ "run.py" ]
+COPY . /app
+RUN pip install --no-cache-dir -r requirements.txt
+EXPOSE 5000
+CMD ["python", "run.py"]
