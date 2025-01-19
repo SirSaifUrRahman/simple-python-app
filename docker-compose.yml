@@ -1,6 +1,5 @@
 services:
   app:
-    build:
-      context: .
+    image: saif764/simple-python-app:latest
     ports:
       - "5000:5000"
